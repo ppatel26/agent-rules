@@ -57,10 +57,65 @@ agent-rules/
   AGENTS.md            # Canonical instructions (symlink target)
   README.md
   LICENSE              # MIT
+  docs/
+    guides/
+    principles/
   harness/
     sync.py            # The harness CLI (sync, check, dry-run)
     targets.json       # Agent target definitions
 ```
+
+## Canonical `AGENTS.md` design
+
+This repo is intentionally opinionated. It does not claim there is one universally correct way to write a canonical agent instruction file.
+
+Our current design is:
+
+- keep the root `AGENTS.md` short and universal
+- keep deeper rationale in `docs/`
+- use triggered references in the root file: `read X when Y`
+- prefer more specific guidance over more general guidance
+
+This shape is based on how current tools actually work in practice. Different agents support deeper context through different mechanisms: hierarchical instruction files, imports, rules, `@` references, and skills. The common pattern is the same: keep the always-on guidance small, and load deeper guidance only when the task makes it relevant.
+
+That is why this repo does not try to cram every preference into one giant `AGENTS.md`. The canonical file is the default operating layer; the docs are supporting layers.
+
+This repo is also a public working notebook for the harness itself. As agents get better at scoped loading, delegation, and tool use, both the sync harness and the canonical-file pattern may evolve.
+
+### `docs/` is optional
+
+You do not have to structure your canonical instructions the way this repo does.
+
+If you want the simplest possible setup, keep everything in a single `AGENTS.md` file and leave `docs/` empty or omit it entirely. The harness still works fine in that mode: one canonical file, many symlinked agent instruction files.
+
+The `docs/` layout exists because it works well for this repo's preferences and research process, not because it is required by the harness.
+
+### Current working rules
+
+- put non-negotiable rules in `AGENTS.md`
+- put deeper rationale, examples, and taste in `docs/`
+- use explicit triggered references instead of a bare link dump
+- do not assume every tool auto-loads referenced files
+- when guidance conflicts, the more specific relevant guidance wins
+
+### Research references
+
+These informed the current structure:
+
+- Claude Code memory and project instructions: <https://docs.anthropic.com/en/docs/claude-code/memory>
+- Codex `AGENTS.md`: <https://developers.openai.com/codex/guides/agents-md>
+- Codex skills: <https://developers.openai.com/codex/skills>
+- Gemini CLI `GEMINI.md`: <https://geminicli.com/docs/cli/gemini-md/>
+- Gemini import processor: <https://geminicli.com/docs/reference/memport/>
+- Cursor rules: <https://cursor.com/docs/rules>
+- Cursor skills: <https://cursor.com/docs/skills>
+- Amp manual: <https://ampcode.com/manual>
+- OpenCode rules: <https://opencode.ai/docs/rules/>
+- OpenCode skills: <https://opencode.ai/docs/skills/>
+- Factory `AGENTS.md`: <https://docs.factory.ai/cli/configuration/agents-md>
+- Factory skills: <https://docs.factory.ai/cli/configuration/skills>
+- Augment guidelines: <https://docs.augmentcode.com/setup-augment/guidelines>
+- Augment CLI rules: <https://docs.augmentcode.com/cli/rules>
 
 ## Adding a new agent
 
