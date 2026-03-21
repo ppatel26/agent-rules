@@ -1,0 +1,54 @@
+{
+  "canonical": "AGENTS.md",
+  "targets": [
+    {
+      "name": "claude",
+      "label": "Claude Code",
+      "link_path": "~/.claude/CLAUDE.md",
+      "link_name": "CLAUDE.md",
+      "notes": "Uses CLAUDE.md natively; most other tools fall back to it"
+    },
+    {
+      "name": "codex",
+      "label": "Codex (OpenAI)",
+      "link_path": "~/.codex/AGENTS.md",
+      "link_name": "AGENTS.md",
+      "notes": "CODEX_HOME env var can relocate; AGENTS.override.md takes priority"
+    },
+    {
+      "name": "droid",
+      "label": "Droid (Factory)",
+      "link_path": "~/.factory/AGENTS.md",
+      "link_name": "AGENTS.md",
+      "notes": "Personal override; also walks up directory tree per-project"
+    },
+    {
+      "name": "amp",
+      "label": "Amp",
+      "link_path": "~/.config/amp/AGENTS.md",
+      "link_name": "AGENTS.md",
+      "notes": "Also checks ~/.config/AGENTS.md; falls back to CLAUDE.md"
+    },
+    {
+      "name": "opencode",
+      "label": "OpenCode",
+      "link_path": "~/.config/opencode/AGENTS.md",
+      "link_name": "AGENTS.md",
+      "notes": "Falls back to ~/.claude/CLAUDE.md if absent"
+    },
+    {
+      "name": "gemini",
+      "label": "Gemini CLI",
+      "link_path": "~/.gemini/GEMINI.md",
+      "link_name": "GEMINI.md",
+      "notes": "Uses GEMINI.md natively; can configure settings.json to also read AGENTS.md"
+    },
+    {
+      "name": "intent",
+      "label": "Intent (Augment)",
+      "link_path": "~/.augment/rules/global.md",
+      "link_name": "global.md",
+      "notes": "Uses ~/.augment/rules/*.md for user-wide rules; always_apply type"
+    }
+  ]
+}
