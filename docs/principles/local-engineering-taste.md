@@ -22,7 +22,26 @@ This document distills implementation preferences observed in real production co
 ### Prefer explicit data models over vague flexible ones
 
 - If a structure has a known shape, model it directly.
+- Prefer models that make invalid states hard or impossible to represent.
+- Avoid broad bags of optional fields that force every caller to guess which combinations are valid.
 - Use schemaless structures only where the data is genuinely dynamic.
+
+### Prefer self-documenting functions
+
+- Use precise names so the code explains itself without surrounding commentary.
+- Split complicated flows into smaller functions with explicit inputs, outputs, and purpose.
+- Keep reusable helpers narrow and predictable so callers can trust what they do without reading every implementation detail.
+
+### Separate reusable logic from orchestration
+
+- Prefer small, well-defined functions for reusable logic and use higher-level wrappers for messy orchestration or workflow glue.
+- Avoid letting a reusable helper silently accumulate unrelated behavior over time.
+- When a high-level orchestration function needs a comment, use it to explain surprising behavior, invariants, or traps rather than restating the name.
+
+### Compose related concepts instead of flattening them
+
+- When two concepts are often used together but remain distinct, compose them rather than merging them into one overloaded model.
+- Distinct domain concepts with similar shapes should stay distinct in naming and typing when the language makes that practical.
 
 ### Comments explain rationale
 

@@ -34,7 +34,10 @@
 - Identify edge cases early: pagination, rate limits, timezones, partial failures, retries, empty responses, duplicates, and invalid input.
 - For external APIs, handle limits, retries, errors, and response variation in the first version.
 - For time and dates, be explicit about timezone and boundary behavior.
+- Prefer self-documenting code. Use precise names and split complex flows into small functions with explicit inputs, outputs, and purpose.
+- Keep reusable functions narrow and predictable. Avoid hidden side effects unless the side effect is the explicit goal of the function.
 - Prefer explicit data modeling when the shape is known.
+- Model data so invalid states are hard or impossible to represent. Avoid catch-all types and broad bags of optional fields.
 - Prefer scripts that checkpoint progress, persist partial results, and support resume over monolithic one-shot runs.
 - Parameterize expensive workflows so one model, provider, partition, or batch can run independently when needed.
 - Comments explain why, not what.
@@ -92,4 +95,4 @@
 - Use the most specific relevant guidance available. If guidance conflicts, the more specific guidance wins.
 - When changing agent behavior, planning style, delegation, review workflow, or communication norms, read `docs/guides/agent-operating-model.md`.
 - When making system design, safety, performance, limits, or bounded-behavior tradeoffs, read `docs/principles/tiger-style.md`.
-- When matching local implementation taste around failures, constraints, SQL-first thinking, comments, or dependency discipline, read `docs/principles/local-engineering-taste.md`.
+- When matching local implementation taste around failures, function design, data modeling, comments, SQL-first thinking, or dependency discipline, read `docs/principles/local-engineering-taste.md`.
