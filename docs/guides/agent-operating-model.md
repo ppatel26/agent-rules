@@ -141,6 +141,13 @@ When using a sub-agent, give it:
 - Review staged changes before commit.
 - Check for secrets, private paths, generated outputs, and unrelated files.
 - Use a sub-agent for review when possible.
+- Do not add AI, bot, generated-by, or co-authored-by trailers unless the user explicitly asks for them.
+
+Examples of trailers not to add unless explicitly requested:
+
+- `Co-authored-by: ...`
+- `Generated-by: ...`
+- `AI-assisted: ...`
 
 ## Persistence
 

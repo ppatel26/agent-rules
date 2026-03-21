@@ -78,7 +78,7 @@
 - Stage specific files.
 - Review staged changes for secrets, credentials, private paths, generated artifacts, and unrelated files before commit.
 - If a sub-agent is available, use it for this review.
-- Do not add AI attribution trailers unless explicitly asked.
+- Do not add AI, bot, generated-by, or co-authored-by trailers unless the user explicitly asks for them.
 
 ## Persistence
 
