@@ -59,6 +59,7 @@ agent-rules/
   LICENSE              # MIT
   docs/
     guides/
+    preferences/
     principles/
   harness/
     sync.py            # The harness CLI (sync, check, dry-run)
@@ -100,7 +101,7 @@ The `docs/` layout exists because it works well for this repo's preferences and 
 
 ### Research references
 
-These informed the current structure:
+These informed the current structure and rules:
 
 - Claude Code memory and project instructions: <https://docs.anthropic.com/en/docs/claude-code/memory>
 - Codex `AGENTS.md`: <https://developers.openai.com/codex/guides/agents-md>
@@ -116,6 +117,9 @@ These informed the current structure:
 - Factory skills: <https://docs.factory.ai/cli/configuration/skills>
 - Augment guidelines: <https://docs.augmentcode.com/setup-augment/guidelines>
 - Augment CLI rules: <https://docs.augmentcode.com/cli/rules>
+- Agentic engineering patterns (Simon Willison): <https://simonwillison.net/guides/agentic-engineering-patterns/>
+- pi-mono `AGENTS.md` (badlogic): <https://github.com/badlogic/pi-mono/blob/main/AGENTS.md>
+- Agentic coding best practices (Swerdlow): <https://aicode.swerdlow.dev/>
 
 ## Adding a new agent
 
