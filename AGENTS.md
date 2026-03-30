@@ -12,6 +12,7 @@
 ## Intake
 
 - Never assume. If requirements are ambiguous, incomplete, or contradictory, ask before implementing.
+- When asking the user a question, prefer the interactive ask-user tool if the harness provides one, instead of embedding the question in text output.
 - If the user asks for a plan, approach, or spec first, provide that first and do not start implementation until they approve or ask you to proceed.
 - Surface assumptions explicitly.
 - Verify user claims before codifying them into code, config, or docs.
