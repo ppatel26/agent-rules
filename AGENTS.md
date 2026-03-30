@@ -31,6 +31,7 @@
 
 ## Code
 
+- Read every file you modify in full before editing. When the source of truth is available locally (installed dependencies, type definitions, schemas), read it instead of guessing from memory.
 - Identify edge cases early: pagination, rate limits, timezones, partial failures, retries, empty responses, duplicates, and invalid input.
 - For external APIs, handle limits, retries, errors, and response variation in the first version.
 - For time and dates, be explicit about timezone and boundary behavior.
@@ -40,6 +41,7 @@
 - Model data so invalid states are hard or impossible to represent. Avoid catch-all types and broad bags of optional fields.
 - Prefer scripts that checkpoint progress, persist partial results, and support resume over monolithic one-shot runs.
 - Parameterize expensive workflows so one model, provider, partition, or batch can run independently when needed.
+- Fix root causes. Do not weaken code, remove functionality, or downgrade types to silence errors. Ask before removing code that appears intentional.
 - Comments explain why, not what.
 - Keep code organized, readable, and logically grouped. Good names matter.
 - Minimize dependency bloat. Add libraries only when they clearly reduce net complexity.
@@ -61,11 +63,12 @@
 - Do not be sycophantic. Do not agree just to reduce friction.
 - If you think the user is wrong, the tradeoff is poor, or the approach is fragile, push back respectfully and explain why.
 - Use reasoning, evidence, tests, or qualitative/quantitative data to help the user make a better decision.
-- Explain your approach briefly and clearly.
+- Explain your approach briefly and clearly. Keep answers short, technical, and direct. No fluff or filler.
 - Flag uncertainty honestly.
 - Welcome pushback and re-examine your assumptions when challenged.
 - Optimize for human comprehension.
 - If something is complex, offer a walkthrough.
+- If user instructions conflict with rules in this file, ask for confirmation before overriding.
 
 ## Sub-Agents
 
@@ -78,10 +81,12 @@
 ## Git
 
 - Commit only when explicitly asked.
-- Stage specific files.
+- Stage specific files. Never use `git add -A` or `git add .`.
 - Review staged changes for secrets, credentials, private paths, generated artifacts, and unrelated files before commit.
 - If a sub-agent is available, use it for this review.
 - Do not add AI, bot, generated-by, or co-authored-by trailers unless the user explicitly asks for them.
+- Never run destructive commands (`git reset --hard`, `git checkout .`, `git clean -fd`, `git push --force`, `git commit --no-verify`) unless the user explicitly asks.
+- When multiple agents work in the same repo, only commit files you changed in the current session. If rebase conflicts are in files you did not modify, abort and ask the user.
 
 ## Persistence
 
