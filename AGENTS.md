@@ -101,3 +101,4 @@
 - When changing agent behavior, planning style, delegation, review workflow, or communication norms, read `docs/guides/agent-operating-model.md`.
 - When making system design, safety, performance, limits, or bounded-behavior tradeoffs, read `docs/principles/tiger-style.md`.
 - When matching local implementation taste around failures, function design, data modeling, comments, SQL-first thinking, or dependency discipline, read `docs/principles/local-engineering-taste.md`.
+- When setting up a new project, choosing a package manager, or initializing a runtime environment, read `docs/preferences/toolchain.md`.
