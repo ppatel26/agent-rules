@@ -81,7 +81,8 @@
 
 ## Git
 
-- Commit only when explicitly asked.
+- Never commit automatically. Finishing a task, passing tests, or reaching a stopping point is not permission to commit. Wait for an explicit request from the user ("commit this", "let's commit", etc.) before running `git commit`.
+- Same rule applies to `git push`. Never push without an explicit request, even if the commit was approved.
 - Stage specific files. Never use `git add -A` or `git add .`.
 - Review staged changes for secrets, credentials, private paths, generated artifacts, and unrelated files before commit.
 - If a sub-agent is available, use it for this review.
