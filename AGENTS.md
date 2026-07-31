@@ -71,6 +71,17 @@
 - If something is complex, offer a walkthrough.
 - If user instructions conflict with rules in this file, ask for confirmation before overriding.
 
+## Writing
+
+- These rules apply to all prose written for humans: responses to the user, docs, READMEs, runbooks, procedures, PR descriptions, error messages, and UI text. They follow the spirit of ASD-STE100 (Simplified Technical English) without its dictionary or hard word counts.
+- Decide first if the text is procedural (instructions) or descriptive (information). Write instructions in the imperative, one instruction per sentence.
+- Keep sentences short: about 20 words for instructions, about 25 for descriptions. Keep each paragraph to one topic and at most about six sentences.
+- Use active voice and simple tenses. Use passive only when the actor is unknown or irrelevant.
+- Use one term per concept and reuse it exactly. Do not rotate synonyms for variety.
+- Avoid noun stacks longer than three words. Break them up with prepositions ("the timeout for the retry queue", not "retry queue timeout configuration value").
+- Prefer concrete verbs over nominalizations ("configure X", not "perform the configuration of X").
+- Put safety callouts before the step they apply to. State the command or condition first, then the risk. Distinguish risk of data loss or harm (warning) from lesser damage (caution) and pure information (note).
+
 ## Sub-Agents
 
 - If the tooling supports sub-agents or parallel agents, use them for independent workstreams, broad research, fresh-eye reviews, and tasks that would otherwise clutter the main context.
