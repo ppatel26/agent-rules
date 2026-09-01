@@ -20,7 +20,8 @@
       "label": "Droid (Factory)",
       "link_path": "~/.factory/AGENTS.md",
       "link_name": "AGENTS.md",
-      "notes": "Personal override; also walks up directory tree per-project"
+      "mode": "copy",
+      "notes": "Droid's global instruction loader does NOT follow symlinks (verified 2026-08-31 on droid CLI 0.208.1 via fresh-session canary test), so this target is a generated file copy. Re-run sync after editing the canonical AGENTS.md. Droid also injects a built-in commit co-author rule that global instructions cannot override."
     },
     {
       "name": "amp",
@@ -35,20 +36,6 @@
       "link_path": "~/.config/opencode/AGENTS.md",
       "link_name": "AGENTS.md",
       "notes": "Falls back to ~/.claude/CLAUDE.md if absent"
-    },
-    {
-      "name": "gemini",
-      "label": "Gemini CLI",
-      "link_path": "~/.gemini/GEMINI.md",
-      "link_name": "GEMINI.md",
-      "notes": "Uses GEMINI.md natively; can configure settings.json to also read AGENTS.md"
-    },
-    {
-      "name": "intent",
-      "label": "Intent (Augment)",
-      "link_path": "~/.augment/rules/global.md",
-      "link_name": "global.md",
-      "notes": "Uses ~/.augment/rules/*.md for user-wide rules; always_apply type"
     }
   ]
 }
